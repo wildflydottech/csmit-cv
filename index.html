@@ -3,69 +3,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CSmit | Terminal CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>There is no place like home</title>
   <style>
     body {
-      margin: 0;
+      background-color: #0d1117;
+      color: #39ff14;
       font-family: 'Courier New', Courier, monospace;
-      background-color: #0a0a0a;
-      color: #33FF33;
-      line-height: 1.6;
-      padding: 30px;
+      margin: 0;
+      padding: 2em;
+      text-align: center;
     }
     h1 {
-      color: #00FF00;
       font-size: 2.5em;
-      text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+      text-shadow: 0 0 10px #39ff14;
     }
-    .console-box {
-      background-color: #1e1e1e;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
-      margin-bottom: 30px;
-    }
-    .console-box p {
+    p {
+      max-width: 600px;
+      margin: 1em auto;
       font-size: 1.2em;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 20px;
+    .btn {
+      background-color: #0d1117;
+      border: 2px solid #39ff14;
+      color: #39ff14;
       padding: 10px 20px;
-      background: #00FF00;
-      color: #121212;
+      margin: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
       text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+      display: inline-block;
     }
-    a.button:hover {
-      background: #33FF33;
-      box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
-    }
-    footer {
-      margin-top: 50px;
-      text-align: center;
-      font-size: 0.8em;
-      color: #777;
+    .btn:hover {
+      background-color: #39ff14;
+      color: #0d1117;
     }
   </style>
 </head>
 <body>
-  <h1>> There is no place like home</h1>
-  <div class="console-box">
-    <p><strong>> Name:</strong> Collin Smit</p>
-    <p><strong>> Role:</strong> IT Ops Technician | Tech Manager | Systems Admin</p>
-    <p><strong>> Skills:</strong> Python, Linux, Networking, Cloud, Microsoft Stack</p>
-    <p><strong>> Experience:</strong> Available in CV below ⤵</p>
-  </div>
-
-  <a class="button" href="CSmit_S_CV_Full.pdf" download>⬇ Download Full CV (PDF)</a>
-
-  <footer>
-    <p>Built with ❤️ using HTML + CSS | Hosted on GitHub Pages</p>
-  </footer>
+  <h1>There is no place like home</h1>
+  <p>This is my techy online CV portal. Feel free to explore or download the documents below:</p>
+  <a class="btn" href="CSmit_S_CV_Full.docx" download>Download CV (Word)</a>
+  <a class="btn" href="CSmit_S_CoverLetter.pdf" download>Cover Letter</a>
+  <a class="btn" href="Certificates.zip" download>Certificates</a>
 </body>
 </html>
