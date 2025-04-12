@@ -8,9 +8,9 @@
     <title>Collin's CV Portal</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Courier New", Courier, monospace; /* Terminal style font */
             background-color: #121212;
-            color: white;
+            color: green; /* Green text */
             margin: 0;
             padding: 0;
         }
@@ -23,6 +23,12 @@
         h1 {
             font-size: 50px;
             font-weight: bold;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: normal;
+            color: #ff6347; /* Tomato color for emphasis */
         }
 
         .intro {
@@ -45,7 +51,7 @@
 
         .button {
             background-color: #00d4ff;
-            color: #121212;
+            color: green; /* Green text on the button */
             font-size: 18px;
             padding: 15px 30px;
             text-decoration: none;
@@ -55,30 +61,4 @@
             transition: background-color 0.3s;
         }
 
-        .button:hover {
-            background-color: #009ab7;
-        }
-
-        .larger-text {
-            font-size: 60px;
-            font-weight: bold;
-            color: #ff6347; /* Tomato color */
-        }
-    </style>
-</head>
-
-<body>
-    <header>
-        <h1 class="larger-text">127.0.0.1</h1>
-        <p class="intro">This is Collin's online CV portal</p>
-        <p class="sub-text">A place to showcase my CV, cover letter, and professional certificates!</p>
-    </header>
-
-    <div class="btn-container">
-        <a class="button" href="https://github.com/wildflydottech/csmit-cv/raw/main/csmit-cv.docx" download="csmit-cv.docx">Download CV</a>
-        <a class="button" href="https://github.com/wildflydottech/csmit-cv/raw/main/csmit-coverl.docx" download="csmit-coverl.docx">Download Cover Letter</a>
-        <a class="button" href="https://github.com/wildflydottech/csmit-cv" target="_blank">Download Professional Certificates</a>
-    </div>
-</body>
-
-</html>
+        .
