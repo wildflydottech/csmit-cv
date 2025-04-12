@@ -1,96 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Collin's CV Portal</title>
+    <title>Collin's Matrix CV</title>
     <style>
         body {
-            font-family: "Courier New", Courier, monospace; /* Terminal style font */
-            background-color: #121212;
-            color: green; /* Green text */
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 0;
+            overflow: hidden;
         }
 
         header {
             text-align: center;
-            padding: 50px 0;
+            padding: 60px 0;
         }
 
         h1 {
-            font-size: 50px;
-            font-weight: bold;
+            font-size: 60px;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
         }
 
         h2 {
-            font-size: 36px;
-            font-weight: normal;
-            color: #ff6347; /* Tomato color for emphasis */
+            font-size: 30px;
+            color: #0f0;
+            text-shadow: 0 0 5px #00ff00;
         }
 
         .intro {
-            font-size: 36px;
-            color: #00d4ff;
-        }
-
-        .sub-text {
             font-size: 24px;
+            color: #0f0;
             margin-top: 10px;
-            color: #d4d4d4;
         }
 
         .btn-container {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .button {
-            background-color: #00d4ff;
-            color: green; /* Green text on the button */
+            background-color: black;
+            color: #00ff00;
+            border: 2px solid #00ff00;
             font-size: 18px;
-            padding: 15px 30px;
-            text-decoration: none;
+            padding: 12px 24px;
             border-radius: 5px;
-            text-transform: uppercase;
             font-weight: bold;
-            transition: background-color 0.3s;
+            text-decoration: none;
+            box-shadow: 0 0 8px #00ff00;
+            transition: all 0.3s ease;
         }
 
         .button:hover {
-            background-color: #009ab7;
+            background-color: #00ff00;
+            color: black;
+            box-shadow: 0 0 20px #00ff00;
         }
 
-        .larger-text {
-            font-size: 60px;
-            font-weight: bold;
-            color: #ff6347; /* Tomato color */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
     </style>
 </head>
-
 <body>
+
+    <canvas id="matrixCanvas"></canvas>
+
     <header>
-        <h1 class="larger-text">127.0.0.1</h1>
+        <h1>127.0.0.1</h1>
         <h2>There is no place like home</h2>
         <p class="intro">This is Collin's online CV portal</p>
-        <p class="sub-text">A place to showcase my CV, cover letter, and professional certificates!</p>
     </header>
 
     <div class="btn-container">
-        <!-- Download CV Button -->
-        <a class="button" href="https://github.com/wildflydottech/csmit-cv/raw/main/csmit-cv.docx" download="csmit-cv.docx">Download CV</a>
-
-        <!-- Download Cover Letter Button -->
-        <a class="button" href="https://github.com/wildflydottech/csmit-cv/raw/main/csmit-coverl.docx" download="csmit-coverl.docx">Download Cover Letter</a>
-
-        <!-- Download Professional Certificates Button (Link to Google Drive) -->
-        <a class="button" href="https://drive.google.com/drive/folders/1NfIZR9yw4Vyg1lAFYRqEXUdEkeSYYQ1p?usp=sharing" target="_blank">Download Professional Certificates</a>
+        <a class="button" href="csmit-cv.docx" download>Download CV</a>
+        <a class="button" href="csmit-coverl.docx" download>Download Cover Letter</a>
+        <a class="button" href="https://drive.google.com/drive/folders/1NfIZR9yw4Vyg1lAFYRqEXUdEkeSYYQ1p?usp=sharing" target="_blank">
+            Download Professional Certificates
+        </a>
     </div>
-</body>
 
+    <script>
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        const letters = "アァイィウヴエカキクケコサシスセソABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#0f0";
+            ctx.font = fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 33);
+    </script>
+</body>
 </html>
